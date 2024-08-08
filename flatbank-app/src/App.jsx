@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Transactions from './components/Transactions';
-
+import NewTransactionForm from './components/NewTransactionForm';
 function App() {
   const [transactions, setTransactions] = useState([]);
 
@@ -24,7 +24,8 @@ function App() {
       <div className='header-text'>
         <h2>The Royal Bank of Flatiron</h2>
       </div>
-      <Transactions transactions={transactions}/>
+      <NewTransactionForm/>
+    <Transactions transactions={transactions}/>
     </div>
   );
 }
