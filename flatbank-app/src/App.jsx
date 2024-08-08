@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Transactions from './components/Transactions';
 import NewTransactionForm from './components/NewTransactionForm';
+ 
+
 function App() {
   const [transactions, setTransactions] = useState([]);
 
@@ -18,13 +20,29 @@ function App() {
   }, []); // empty array means it will only run once
 
   console.log(transactions);
+  function handleUpdateOnSubmission(newTransaction) {
+    setTransactions([...transactions, newTransaction]);
+
+    const serverOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newTransaction)
+    }
+    fetch('http://localhost:3000/transaction', serverOptions)
+    .then(r=>r.json())
+    .then(newItem=>console.log(newItem))
+    .catch(err=>console.log(err))
+  }
+
 
   return (
     <div className='ul raise segment'>
       <div className='header-text'>
         <h2>The Royal Bank of Flatiron</h2>
       </div>
-      <NewTransactionForm/>
+      <NewTransactionForm onSubmission={handleUpdateOnSubmission}/>
     <Transactions transactions={transactions}/>
     </div>
   );
