@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
+import Transactions from './components/Transactions';
 
 function App() {
-  const [transactions, setTransactions] = useState([]);
+  const [Transactions, setTransactions] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3000/transactions')
@@ -18,13 +17,14 @@ function App() {
       .catch(error => console.error('Fetch error:', error));
   }, []); // empty array means it will only run once
 
-  console.log(transactions);
+  console.log(Transactions);
 
   return (
     <div className='ul raise segment'>
       <div className='header-text'>
         <h2>The Royal Bank of Flatiron</h2>
       </div>
+      <Transactions Transactions={transactions}/>
     </div>
   );
 }

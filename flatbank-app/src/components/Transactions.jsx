@@ -1,6 +1,7 @@
 import React from 'react'
+import TransactionItem from './TransactionItem'
 
-function Transactions() {
+function Transaction({Transactions}) {
   return (
     <div>
       <table>
@@ -10,7 +11,16 @@ function Transactions() {
           <th>Category</th>
           <th>Amount</th>
         </tr>
-        {/* transactions items */}
+        {/* transationtions items */}
+        {Transactions.map(Transaction=>{
+          return <TransactionItem 
+          date={Transaction.date}
+          description={Transaction.description}
+          category={Transaction.category}
+          amount={Transaction.amount}
+          key={Transaction.id}
+          />
+        })}
       </table>
     </div>
   )
