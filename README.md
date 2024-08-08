@@ -20,7 +20,7 @@ In order for you to use the content on this repository ensure you have the follo
 1. *Open a terminal or command line interface* on your computer.
 2. *Clone the repository* using the following command:
     bash
-    git clone :`https://github.com/KiniBrown76/bank-of-flatiron-instructions.git`
+    git clone :`https://github.com/Elviscryptic1981/flatbank.git`
     
 3. *Navigate to the project directory*:
     bash
