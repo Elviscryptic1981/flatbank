@@ -24,7 +24,7 @@ function App() {
       <div className='header-text'>
         <h2>The Royal Bank of Flatiron</h2>
       </div>
-      <Transactions Transactions={transactions}/>
+      <Transactions Transactions={Transactions}/>
     </div>
   );
 }

@@ -13,4 +13,4 @@ function TransactionItem({date, description, category,amount}) {
   )
 }
 
-export default TransactionItem
+export default TransactionItem;

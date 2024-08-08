@@ -1,7 +1,7 @@
 import React from 'react'
 import TransactionItem from './TransactionItem'
 
-function Transaction({Transactions}) {
+function Transactions({Transactions}) {
   return (
     <div>
       <table>
@@ -26,4 +26,4 @@ function Transaction({Transactions}) {
   )
 }
 
-export default Transactions
+export default Transactions;
