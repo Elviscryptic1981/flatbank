@@ -3,7 +3,7 @@ import './App.css';
 import Transactions from './components/Transactions';
 
 function App() {
-  const [Transactions, setTransactions] = useState([]);
+  const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3000/transactions')
@@ -13,18 +13,18 @@ function App() {
         }
         return res.json();
       })
-      .then(transc => setTransactions(transc))
+      .then(data => setTransactions(data))
       .catch(error => console.error('Fetch error:', error));
   }, []); // empty array means it will only run once
 
-  console.log(Transactions);
+  console.log(transactions);
 
   return (
     <div className='ul raise segment'>
       <div className='header-text'>
         <h2>The Royal Bank of Flatiron</h2>
       </div>
-      <Transactions Transactions={Transactions}/>
+      <Transactions transactions={transactions}/>
     </div>
   );
 }

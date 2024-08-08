@@ -1,28 +1,33 @@
 import React from 'react'
 import TransactionItem from './TransactionItem'
 
-function Transactions({Transactions}) {
+function Transactions({transactions}) {
   return (
-    <div>
+    
       <table>
-        <tr>
+        <thead>
+          <tr>
           <th>Date</th>
           <th>Description</th>
           <th>Category</th>
           <th>Amount</th>
         </tr>
-        {/* transationtions items */}
-        {Transactions.map(Transaction=>{
+        </thead>
+        <tbody>{/* transationtions items */}
+        {transactions.map(transaction=>{
           return <TransactionItem 
-          date={Transaction.date}
-          description={Transaction.description}
-          category={Transaction.category}
-          amount={Transaction.amount}
-          key={Transaction.id}
+          date={transaction.date}
+          description={transaction.description}
+          category={transaction.category}
+          amount={transaction.amount}
+          key={transaction.id}
           />
         })}
+          </tbody>
+        
+        
       </table>
-    </div>
+    
   )
 }
 
